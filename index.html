@@ -50,9 +50,8 @@
             </div>
             <div class="input-group f-class">
                 <div>
-                    <label for="">First Class ($150)</label>
-                    <input id="first-class-persons" class="inp-style inp-width" type="number" name="" min="0" max="0"
-                        value="0">
+                    <label for="first-class-persons">First Class ($150)</label>
+                    <input id="first-class-persons" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
                     <button onclick="handleTikes('first', true)" id="first-class-increase" class="btn btn-default"><i
@@ -65,9 +64,8 @@
 
             <div class="input-group f-class">
                 <div>
-                    <label for="">Economy ($100)</label>
-                    <input id="economy-class-persons" class="inp-style inp-width" type="number" name="" min="0" max="0"
-                        value="0">
+                    <label for="economy-class-persons">Economy ($100)</label>
+                    <input id="economy-class-persons" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
                     <button onclick="handleTikes('economy', true)" id="economy-class-increase"
@@ -157,12 +155,14 @@
 
             //handle bookNow button
             function bookingDetails() {
-                const getInputValue = document.getElementById('first-class-persons').value;
-                const inputValue = parseInt(getInputValue);
-                if (inputValue == 0) {
-                    alert('Booking at list one Ticket');
+                const countFirstClassTickets = getInputValue('first');
+                const countEconomyClassTickets = getInputValue('economy');
+
+                if (countFirstClassTickets == 0 && countEconomyClassTickets == 0) {
+                    alert('You can not book any ticket');
                 } else {
-                    alert("Successfully Booking Flights Tickets\n" + "Thank you");
+
+                    alert("Successfully Booking Flights Tickets\n" + "Your booking list \n Total First Class Tickets : " + countFirstClassTickets + "\n Total Economy Tickets : " + countEconomyClassTickets);
                 }
 
 

@@ -157,12 +157,13 @@
             function bookingDetails() {
                 const countFirstClassTickets = getInputValue('first');
                 const countEconomyClassTickets = getInputValue('economy');
+                const totalPrice = document.getElementById('total').innerText;
 
                 if (countFirstClassTickets == 0 && countEconomyClassTickets == 0) {
                     alert('You can not book any ticket');
                 } else {
 
-                    alert("Successfully Booking Flights Tickets\n" + "Your booking list \n Total First Class Tickets : " + countFirstClassTickets + "\n Total Economy Tickets : " + countEconomyClassTickets);
+                    alert("Successfully Booking Flights Tickets\n" + "Your booking list \n Total First Class Tickets : " + countFirstClassTickets + "\n Total Economy Tickets : " + countEconomyClassTickets + "\n Total Price : " + totalPrice);
                 }
 
 
